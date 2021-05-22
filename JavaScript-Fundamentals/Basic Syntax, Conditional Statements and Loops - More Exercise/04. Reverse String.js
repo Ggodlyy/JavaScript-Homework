@@ -4,6 +4,6 @@ function solve(string) {
     .reverse()
     .join('');
 
-    console.log(reverse);
+    return reverse;
 }
 solve('Hello')
