@@ -7,5 +7,13 @@ function solve(num1, num2, num3) {
     } else {
         console.log(`${sum} - Integer`)
     }
+
+    console.log('or');
+
+    if (sum % 1 === 0) {
+        console.log(`${sum} - Integer`);
+    } else {
+        console.log(`${sum} - Float`);
+    }
 }
-console.log(solve(9, 100, 1.1))
+solve(9, 100, 1.1);
