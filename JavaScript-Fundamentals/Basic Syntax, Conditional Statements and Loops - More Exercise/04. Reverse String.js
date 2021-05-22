@@ -4,6 +4,7 @@ function solve(string) {
     .reverse()
     .join('');
 
+    
     return reverse;
 }
 solve('Hello')
