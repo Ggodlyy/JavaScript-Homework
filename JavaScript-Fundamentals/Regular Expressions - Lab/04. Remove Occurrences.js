@@ -7,4 +7,5 @@ function solve(word, text) {
 
     console.log(text);
 }
-solve('ice', 'kicegiciceeb')
+solve('ice', 'iceiceice')
+
