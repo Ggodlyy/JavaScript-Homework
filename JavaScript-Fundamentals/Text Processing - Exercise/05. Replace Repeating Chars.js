@@ -20,4 +20,18 @@ function solve(text) {
     let result = textArr.filter(el => el != '0');
     return result.join('');
 }
+
+function otherSolution(text) {
+    let output = text[0];
+
+    for (let i = 1; i < text.length; i++) {
+        if (text[i] !== text[i - 1]) {
+            output += text[i];
+        }
+    }
+
+    console.log(output);
+}
+
 solve('qqqwerqwecccwd')
+otherSolution('aaaaabbbbbcdddeeeedssaa');
