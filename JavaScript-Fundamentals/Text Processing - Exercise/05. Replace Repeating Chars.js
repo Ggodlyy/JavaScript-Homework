@@ -4,7 +4,7 @@ function solve(text) {
     for (let i = 0; i < textArr.length; i++) {
         let char = textArr[i];
 
-        if (char === 'O') {
+        if (char === '0') {
             continue;
         }
         
