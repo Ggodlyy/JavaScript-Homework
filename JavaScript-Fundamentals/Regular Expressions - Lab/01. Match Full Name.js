@@ -1,7 +1,7 @@
-function solve(text) {
+function solve(arr) {
     let pattern = /\b[A-Z][a-z]{1,} [A-Z][a-z]{1,}\b/g;
-    let matches = text.match(pattern);
+    let matches = arr[0].match(pattern);
 
     return matches.join(' ');
 }
-solve("Ivan Ivanov, Ivan ivanov, ivan Ivanov, IVan Ivanov, Test Testov, Ivan	Ivanov")
+console.log(solve(["Ivan Ivanov, Ivan ivanov, ivan Ivanov, IVan Ivanov, Test Testov, Ivan	Ivanov"]));
