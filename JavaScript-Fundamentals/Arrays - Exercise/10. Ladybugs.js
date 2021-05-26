@@ -71,8 +71,10 @@ function solve(arr) {
         }
     }
 }
-solve([5, '3',
+
+console.log(solve([5, '3',
     '3 left 2',
     '1 left -2']
 
-)
+))
+
