@@ -15,13 +15,15 @@ function solve(arr) {
 
     for (let input of arr) {
         let [startIndex, direction, flyLength] = input.split(' ');
+        startIndex = Number(startIndex);
+        flyLength = Number(flyLength);
 
-        if (field[Number(startIndex)] !== 1 || startIndex < 0 || startIndex >= field.length) {
+        if (field[startIndex] !== 1 || startIndex < 0 || startIndex >= field.length) {
             continue;
         }
 
-        if (Number(flyLength) < 0) {
-            flyLength = Math.abs(Number(flyLength));
+        if (flyLength < 0) {
+            flyLength = Math.abs(flyLength);
 
             if (direction === 'right') {
                 direction = 'left';
@@ -31,8 +33,8 @@ function solve(arr) {
         }
 
         switch (direction) {
-            case 'right': flyRight(Number(startIndex), Number(flyLength)); break;
-            case 'left': flyLeft(Number(startIndex), Number(flyLength)); break;
+            case 'right': flyRight(startIndex, flyLength); break;
+            case 'left': flyLeft(startIndex, flyLength); break;
         }
     }
 
@@ -69,8 +71,8 @@ function solve(arr) {
         }
     }
 }
-solve([ 5, '3',
-'3 left 2',
-'1 left -2']
+solve([5, '3',
+    '3 left 2',
+    '1 left -2']
 
 )
