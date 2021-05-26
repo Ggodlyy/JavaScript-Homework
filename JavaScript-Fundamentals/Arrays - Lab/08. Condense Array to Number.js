@@ -33,4 +33,4 @@ function betterSolution(arr) {
 }
 
 console.log(solve([2, 10, 3]));
-console.log(otherSolution([2, 10, 3]));
+console.log(betterSolution([2, 10, 3]));
