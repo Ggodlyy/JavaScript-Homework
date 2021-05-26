@@ -3,7 +3,7 @@ function solve(firstArr, secondArr) {
         if (i % 2 === 0) {
             return Number(el) + Number(secondArr[i]);
         } else {
-            return el + secondArr[i];
+            return el + '' + secondArr[i];
         }
     });
 
