@@ -19,7 +19,7 @@ function solve(arr) {
     return arr[0];
 }
 
-function otherSolution(arr) {
+function betterSolution(arr) {
     while (arr.length > 1) {
         for (let i = 0; i < arr.length - 1; i++) {
             let num = arr[i];
