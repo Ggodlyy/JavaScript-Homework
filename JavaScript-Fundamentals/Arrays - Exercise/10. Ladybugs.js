@@ -38,7 +38,7 @@ function solve(arr) {
         }
     }
 
-    console.log(field.join(' '));
+    return field.join(' ');
 
     function flyRight(start, flyLength) {
         field[start] = 0;
