@@ -1,7 +1,7 @@
 function solve(arr) {
     let fieldSize = arr.shift();
     let ladyBugIndexes = arr.shift();
-    let ladyBugIndexesArr = ladyBugIndexes.split(' ');
+    let ladyBugIndexesArr = ladyBugIndexes.split(' ').map(Number);
     let field = [];
     field.length = fieldSize;
     field.fill(0);
