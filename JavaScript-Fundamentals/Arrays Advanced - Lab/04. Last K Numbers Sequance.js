@@ -7,9 +7,8 @@ function solve(n, k) {
             start = 0;
         }
 
-        let slice = result
+        let sum = result
             .slice(start)
-            let sum = slice
             .reduce((acc, curr) => acc += curr, 0);
 
         result.push(sum);
