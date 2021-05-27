@@ -16,8 +16,7 @@ function solve(arr) {
             }
         }
 
-        let upgradedArr = arr.filter(el => el !== limit);
-        arr = upgradedArr;
+        arr = arr.filter(el => el !== limit);
         totalConcreteInYards.push(concreteAmountInADay);
     }
 
