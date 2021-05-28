@@ -1,10 +1,5 @@
 function solve(arr) {
-    let result = arr.filter((el, i) => {
-        if (i % 2 === 0 || i === 0) {
-            return el;
-        }
-    });
-
+    let result = arr.filter((el, i) => i % 2 === 0);
     return result.join(' ');
 }
 
