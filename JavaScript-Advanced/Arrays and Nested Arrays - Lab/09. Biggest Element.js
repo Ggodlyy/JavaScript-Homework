@@ -1,6 +1,5 @@
 function solve(matrix) {
     let bigNum = -Infinity;
-
     matrix.forEach(arr => {
         let biggesNumFromArr = Math.max(...arr);
         if (bigNum <= biggesNumFromArr) {
