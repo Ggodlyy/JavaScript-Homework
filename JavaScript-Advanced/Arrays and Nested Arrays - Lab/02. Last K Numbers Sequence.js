@@ -2,7 +2,7 @@ function solve(n, k) {
     let arr = [1];
 
     while (arr.length < n) {
-        let start = arr.length - k
+        let start = arr.length - k;
 
         if (start < 0) {
             start = 0;
