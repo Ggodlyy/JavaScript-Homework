@@ -10,7 +10,6 @@ function solve(arr) {
     }
 
     let matrix = Object.entries(dictionary);
-
     matrix.sort((a, b) => a[0].localeCompare(b[0]));
 
     for (let arr of matrix) {
