@@ -3,8 +3,7 @@ function solve(arr) {
 
     for (let input of arr) {
         let [name, phoneNumber] = input.split(' ');
-
-        obj[name] = parseInt(phoneNumber);
+        obj[name] = phoneNumber;
     }
 
     for (let key in obj) {
