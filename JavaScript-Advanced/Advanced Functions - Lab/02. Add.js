@@ -1,16 +1,10 @@
 function solution(initialValue) {
-    let obj = {
-        num: initialValue,
-    }
+    let num = initialValue;
 
-    function add(addNum) {
-        let result = this.num + addNum
+    return function (addNum) {
+        let result = num + addNum
         return result;
-    }
-
-    let result = add.bind(obj);
-
-    return result;
+    };
 }
 
 let add5 = solution(5);
