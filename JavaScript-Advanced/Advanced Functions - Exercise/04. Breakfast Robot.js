@@ -75,12 +75,6 @@ manager('report');
 
 
 
-// ['restock carbohydrate 10', 'Success'],
-// ['restock flavour 10', 'Success'],
-// ['prepare apple 1', 'Success'],
-// ['restock fat 10', 'Success'],
-// ['prepare burger 1', 'Success'],
-// ['report', 'protein=0 carbohydrate=4 fat=3 flavour=5']
 
 
 
