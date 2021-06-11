@@ -27,36 +27,7 @@ function solve() {
                 inputEl.setAttribute('placeholder', 'Tickets Sold');
                 let archiveBtn = document.createElement('button');
                 archiveBtn.textContent = 'Archive';
-                archiveBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    let input = e.currentTarget.previousElementSibling;
-                    let output = document.querySelector('#archive > ul');
-
-                    if (!isNaN(input.value) && input.value !== '') {
-                        let movieInfoList = e.currentTarget.parentElement.parentElement;
-                        let movieName = movieInfoList.querySelector('span').textContent;
-                        let moviePrice = Number(movieInfoList.querySelector('div > strong').textContent);
-                        let total = moviePrice * input.value;
-
-                        let li = document.createElement('li');
-                        let span = document.createElement('span');
-                        span.textContent = movieName;
-                        let strong = document.createElement('strong');
-                        strong.textContent = `Total amount: ${total.toFixed(2)}`;
-                        let deleteBtn = document.createElement('button');
-                        deleteBtn.textContent = 'Delete';
-                        deleteBtn.addEventListener('click', (e) => {
-                            let li = e.currentTarget.parentElement;
-                            li.remove();
-                        });
-
-                        li.appendChild(span);
-                        li.appendChild(strong);
-                        li.appendChild(deleteBtn);
-                        output.appendChild(li);
-                        movieInfoList.remove();
-                    }
-                });
+                archiveBtn.addEventListener('click', archiveMovie);
 
                 div.appendChild(strongInsideDiv);
                 div.appendChild(inputEl);
@@ -72,6 +43,38 @@ function solve() {
                 ticketPriceInput.value = '';
             }
         }
+    }
+
+    function archiveMovie(e) {
+        let input = e.currentTarget.previousElementSibling;
+        let output = document.querySelector('#archive > ul');
+
+        if (!isNaN(input.value) && input.value !== '') {
+            let movieInfoList = e.currentTarget.parentElement.parentElement;
+            let movieName = movieInfoList.querySelector('span').textContent;
+            let moviePrice = Number(movieInfoList.querySelector('div > strong').textContent);
+            let total = moviePrice * input.value;
+
+            let li = document.createElement('li');
+            let span = document.createElement('span');
+            span.textContent = movieName;
+            let strong = document.createElement('strong');
+            strong.textContent = `Total amount: ${total.toFixed(2)}`;
+            let deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.addEventListener('click', deleteArchive);
+
+            li.appendChild(span);
+            li.appendChild(strong);
+            li.appendChild(deleteBtn);
+            output.appendChild(li);
+            movieInfoList.remove();
+        }
+    }
+
+    function deleteArchive(e) {
+        let li = e.currentTarget.parentElement;
+        li.remove();
     }
 
     function clearArchive(e) {
