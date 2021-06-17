@@ -20,6 +20,19 @@ function solve(arr, critetria) {
         tickets.sort((a, b) => a[critetria].localeCompare(b[critetria]));
     }
 
+
+    // Another way with a compare function
+
+    //tickets.sort(sortThem);
+
+    // function sortThem(a, b) {
+    //     if (critetria === 'price') {
+    //         return a[critetria] - b[critetria];
+    //     } else {
+    //         return a[critetria].localeCompare(b[critetria]);
+    //     }
+    // }
+
     return tickets;
 }
 solve(['Philadelphia|94.20|available',
