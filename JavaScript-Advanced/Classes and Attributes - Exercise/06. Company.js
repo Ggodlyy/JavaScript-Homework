@@ -49,10 +49,21 @@ class Company {
         output.push(`Best Department is: ${bestAvgSalaryDep}`);
         output.push(`Average salary: ${biggestAvgSalary.toFixed(2)}`);
 
-        let nameSort = this.departments[bestAvgSalaryDep].sort((a, b) => a.username.localeCompare(b.username));
-        let salarySort = nameSort.sort((a, b) => b.salary - a.salary);
+        let sorted = this.departments[bestAvgSalaryDep].sort(sortByNameAndSalary);
 
-        for (let employee of salarySort) {
+        function sortByNameAndSalary(a, b) {
+            if (a.salary > b.salary) {
+                return -1;
+            }
+
+            if (a.salary < b.salary) {
+                return 1;
+            }
+
+            return a.username.localeCompare(b.username);
+        }
+
+        for (let employee of sorted) {
             output.push(`${employee.username} ${employee.salary} ${employee.position}`);
         }
 
