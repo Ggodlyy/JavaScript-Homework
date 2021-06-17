@@ -20,7 +20,7 @@ function solve(arr, critetria) {
         tickets.sort((a, b) => a[critetria].localeCompare(b[critetria]));
     }
 
-    // Another way with a compare function
+    // Another way to sort, with a compare function
 
     //tickets.sort(sortThem);
 
