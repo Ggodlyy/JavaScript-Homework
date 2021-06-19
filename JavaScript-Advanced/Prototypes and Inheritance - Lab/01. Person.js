@@ -4,11 +4,11 @@ function Person(firstName, lastName) {
 
 
     Object.defineProperty(this, 'fullName', {
-        get: function () {
+        get() {
             return this.firstName + ' ' + this.lastName;
         },
 
-        set: function (newFullName) {
+        set(newFullName) {
             let pattern = /(?<firstName>\w+) (?<lastName>\w+)/;
             let matchResult = newFullName.match(pattern);
 
