@@ -9,15 +9,15 @@
 
     Array.prototype.take = function (n) {
         return this.slice(0, n);
-    }
+    };
 
     Array.prototype.sum = function () {
         return this.reduce((a, c) => a += c, 0);
-    }
+    };
 
     Array.prototype.average = function() {
         return this.sum() / this.length;
-    }
+    };
 })();
 
 let arr = [0, 1, 2, 3];
