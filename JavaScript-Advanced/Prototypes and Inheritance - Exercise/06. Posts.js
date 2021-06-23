@@ -54,7 +54,6 @@ function solution() {
         }
     }
 
-
     return {
         Post,
         SocialMediaPost,
