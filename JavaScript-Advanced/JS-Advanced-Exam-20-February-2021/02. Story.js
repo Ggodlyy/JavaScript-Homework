@@ -78,9 +78,9 @@ class Story {
         if (this._comments.length > 0) {
             let sortedComments = this._sortCriteria(this._comments, sortingType);
             result.push(this._sortThem(sortedComments, sortingType));
-
-            return result.join('\n');
         }
+
+        return result.join('\n');
     }
 
     _sortCriteria(commentsOrReplies, criteria) {
