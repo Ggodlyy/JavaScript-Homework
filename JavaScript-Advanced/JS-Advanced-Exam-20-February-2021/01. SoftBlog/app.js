@@ -10,20 +10,14 @@ function solve() {
       let contentInput = document.querySelector('textarea[id="content"]');
       let output = document.querySelector('.site-content > main > section');
 
-      if (authourInput.value !== '' &&
-         titleInput.value !== '' &&
-         categoryInput.value !== '' &&
-         contentInput.value !== '') {
+      let article = createArticle(authourInput.value,
+         titleInput.value, categoryInput.value, contentInput.value);
+      output.appendChild(article);
 
-         let article = createArticle(authourInput.value,
-            titleInput.value, categoryInput.value, contentInput.value);
-         output.appendChild(article);
-
-         authourInput.value = '';
-         titleInput.value = '';
-         categoryInput.value = '';
-         contentInput.value = '';
-      }
+      authourInput.value = '';
+      titleInput.value = '';
+      categoryInput.value = '';
+      contentInput.value = '';
    }
 
    function createArticle(author, title, category, content) {
