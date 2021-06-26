@@ -12,7 +12,6 @@ class Bank {
 
         this.allCustomers.push(customer);
 
-        // if this doesn't work return toString
         return customer;
     }
 
