@@ -28,10 +28,10 @@ function attachEvents() {
                 fetch(commentsUrl).then(res => res.json())
             ]
         ).then(([postObj, comentsObj]) => {
-            console.log(postObj);
-            console.log(comentsObj);
             let postTitle = document.querySelector('#post-title');
             let postBody = document.querySelector('#post-body');
+            let commentsUl = document.querySelector('#post-comments');
+            Array.from(commentsUl.children).forEach(li => li.remove());
 
             postTitle.textContent = postObj.title;
             postBody.textContent = postObj.body;
@@ -41,11 +41,10 @@ function attachEvents() {
                     let comment = document.createElement('li');
                     comment.textContent = cObj.text;
                     comment.id = cObj.postId;
-                    document.querySelector('#post-comments').appendChild(comment);
+                    commentsUl.appendChild(comment);
                 }
             });
         })
-
     }
 }
 
