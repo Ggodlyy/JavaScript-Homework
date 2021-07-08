@@ -17,6 +17,10 @@ function attachEvents() {
 
     function viewPost(e) {
         let input = document.querySelector('#posts');
+        if (input.value === '') {
+            return;
+        }
+
         let postUrl = 'http://localhost:3030/jsonstore/blog/posts/' + input.value;
         let commentsUrl = 'http://localhost:3030/jsonstore/blog/comments/';
         console.log(postUrl);
@@ -28,6 +32,8 @@ function attachEvents() {
                 fetch(commentsUrl).then(res => res.json())
             ]
         ).then(([postObj, comentsObj]) => {
+            console.log(postObj);
+            console.log(comentsObj);
             let postTitle = document.querySelector('#post-title');
             let postBody = document.querySelector('#post-body');
             let commentsUl = document.querySelector('#post-comments');
