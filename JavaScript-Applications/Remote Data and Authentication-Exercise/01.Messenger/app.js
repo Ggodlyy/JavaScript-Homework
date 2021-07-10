@@ -5,7 +5,6 @@ function sendInfo(e) {
     let nameInput = document.querySelector('#author');
     let messageInput = document.querySelector('#content');
 
-
     fetch('http://localhost:3030/jsonstore/messenger', {
         method: 'POST',
         headers: {
