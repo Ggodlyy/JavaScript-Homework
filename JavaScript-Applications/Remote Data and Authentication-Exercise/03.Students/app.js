@@ -58,4 +58,6 @@ function submitStudent(e) {
 
         return tr;
     }
+
+    e.currentTarget.reset();
 }
