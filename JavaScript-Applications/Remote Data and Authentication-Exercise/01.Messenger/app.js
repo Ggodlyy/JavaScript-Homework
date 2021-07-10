@@ -31,8 +31,8 @@ function showMessages(e) {
         .then(data => {
             let result = [];
 
-            Object.keys(data).forEach(objMess => {
-                result.push(`${data[objMess].author}: ${data[objMess].content}`);
+            Object.values(data).forEach(objMess => {
+                result.push(`${objMess.author}: ${objMess.content}`);
             });
 
             textArea.value = result.join('\n');
