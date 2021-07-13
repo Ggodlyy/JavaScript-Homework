@@ -125,7 +125,6 @@ fieldset#main {
     width: 70%;
     margin: 0 50px 0 0;
     padding-bottom: 14px;
-    display: none;
 }
 
 input {
@@ -140,7 +139,6 @@ input {
 label {
     display: block;
     margin: 5px;
-    border: 1px solid white;
     font-weight: bold;
 }
 
@@ -180,12 +178,16 @@ legend {
     display: none;
 }
 
-#user {
-    display: none;
+#register-view, #login-view {
+    display: flex;
+    justify-content: flex-end;
+    align-content: stretch;
+    align-items: center;
+    flex-direction: column;
 }
-
-#guest {
-    display: none;
+#register-view h2, #login-view h2 {
+    margin-bottom: 50px;
+    margin-top: 20px;
 }
 
 #home-view {
