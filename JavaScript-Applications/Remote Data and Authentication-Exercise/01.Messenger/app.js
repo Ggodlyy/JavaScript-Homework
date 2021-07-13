@@ -1,5 +1,6 @@
 document.querySelector('#submit').addEventListener('click', sendInfo);
 document.querySelector('#refresh').addEventListener('click', showMessages);
+let textArea = document.querySelector('#messages');
 
 function sendInfo(e) {
     let nameInput = document.querySelector('#author');
@@ -16,7 +17,13 @@ function sendInfo(e) {
         })
     })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            if (textArea.value === '') {
+                textArea.value += `${data.author}: ${data.content}`
+            } else {
+                textArea.value += `\n${data.author}: ${data.content}`;
+            }
+        })
         .catch(err => console.log(err));
 
     nameInput.value = '';
@@ -24,8 +31,6 @@ function sendInfo(e) {
 }
 
 function showMessages(e) {
-    let textArea = document.querySelector('#messages');
-
     fetch('http://localhost:3030/jsonstore/messenger')
         .then(res => res.json())
         .then(data => {
