@@ -123,8 +123,6 @@ function createNewTopic(topicData) {
 }
 
 
-
-
 let newTopicForm = {
     clearForm,
     postNewTopic,
