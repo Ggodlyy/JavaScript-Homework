@@ -1,4 +1,5 @@
 import getDate from "./helpers/date.js";
+import showUserCommentPage from "./user-comment-page.js";
 
 async function postNewTopic(e) {
     e.preventDefault();
@@ -10,11 +11,13 @@ async function postNewTopic(e) {
     let title = formData.get('topicName');
     let username = formData.get('username');
     let comment = formData.get('postText');
+    let time = getDate();
 
     let userData = {
         title,
         username,
         comment,
+        time,
     };
 
     let validForm = validateForm(title, username, comment, form);
@@ -72,6 +75,7 @@ function createNewTopic(topicData) {
     let topicLink = document.createElement('a');
     topicLink.href = '#';
     topicLink.classList.add('normal');
+    topicLink.addEventListener('click', showUserCommentPage)
 
     let topicTitle = document.createElement('h2');
     topicTitle.textContent = topicData.title;
