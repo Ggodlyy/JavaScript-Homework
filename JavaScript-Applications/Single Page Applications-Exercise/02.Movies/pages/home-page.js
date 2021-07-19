@@ -11,7 +11,7 @@ async function getMovies() {
 
 function createMovieCard(movie) {
     let el = document.createElement('div');
-    el.classList.add('mb-4');
+    el.classList.add('card', 'mb-4');
 
     el.innerHTML = ` <img class="card-img-top" src="${movie.img}"
     alt="Card image cap" width="400">
@@ -19,7 +19,7 @@ function createMovieCard(movie) {
     <h4 class="card-title">${movie.title}</h4>
 </div>
 <div class="card-footer">  
-        <button id="${movie._id}" type="button" class="btn btn-info">Details</button>
+        <button id="${movie._id}" type="button" class="btn btn-info movie-details-btn">Details</button>
 </div>`
 
     return el;
