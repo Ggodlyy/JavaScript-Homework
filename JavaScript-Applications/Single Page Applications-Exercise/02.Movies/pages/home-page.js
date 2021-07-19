@@ -1,3 +1,5 @@
+import { showMovieDetails } from "./movie-datails.page.js";
+
 let main = null;
 let section = null;
 let container = null;
@@ -29,6 +31,12 @@ export function setupHome(mainTarget, sectionTarget) {
     main = mainTarget;
     section = sectionTarget;
     container = section.querySelector('.card-deck.d-flex.justify-content-center');
+
+    container.addEventListener('click', (e) => {
+        if (e.target.classList.contains('movie-details-btn')) {
+            showMovieDetails(e.target.id);
+        }
+    });
 }
 
 export async function showHome() {
