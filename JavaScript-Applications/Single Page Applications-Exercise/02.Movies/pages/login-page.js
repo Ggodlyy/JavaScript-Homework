@@ -40,7 +40,7 @@ export function setupLogin(mainTarget, sectionTarget) {
     main = mainTarget;
     section = sectionTarget;
 
-    section.addEventListener('submit', userLog)
+    section.addEventListener('submit', userLog);
 }
 
 export async function showLogin() {
