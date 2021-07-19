@@ -31,7 +31,20 @@ function setupSection(sectionId, setup) {
 }
 
 function setupNavigation() {
-    document.querySelector('nav').addEventListener('click', (e) => {
+    let nav = document.querySelector('nav');
+    let email = sessionStorage.getItem('authToken');
+
+    if (email !== null) {
+        document.querySelector('#welcome').textContent = `Welcome, ${email}`;
+        nav.querySelectorAll('.user').forEach(li => li.style.display = 'block');
+        nav.querySelectorAll('.guest').forEach(li => li.style.display = 'none');
+    } else {
+        nav.querySelectorAll('.user').forEach(li => li.style.display = 'none');
+        nav.querySelectorAll('.guest').forEach(li => li.style.display = 'block');
+    }
+
+
+    nav.addEventListener('click', (e) => {
         e.preventDefault();
         let view = links[e.target.id];
 
