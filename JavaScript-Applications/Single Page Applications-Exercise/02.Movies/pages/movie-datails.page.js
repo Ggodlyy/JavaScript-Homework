@@ -7,7 +7,6 @@ async function getMovieById(id) {
 
 async function btnFunctions(e) {
     e.preventDefault();
-    console.log(`clicked ${e.target}`);
 
     if (e.target.classList.contains('btn-danger')) {
          

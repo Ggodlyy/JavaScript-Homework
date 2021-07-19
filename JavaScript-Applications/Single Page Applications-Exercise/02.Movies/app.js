@@ -32,7 +32,7 @@ function setupSection(sectionId, setup) {
 
 function setupNavigation() {
     let nav = document.querySelector('nav');
-    let email = sessionStorage.getItem('authToken');
+    let email = sessionStorage.getItem('email');
 
     if (email !== null) {
         document.querySelector('#welcome').textContent = `Welcome, ${email}`;
