@@ -5,9 +5,42 @@ async function getMovieById(id) {
     return data;
 }
 
+async function btnFunctions(e) {
+    e.preventDefault();
+    console.log(`clicked ${e.target}`);
+
+    if (e.target.classList.contains('btn-danger')) {
+         
+    }
+
+    if (e.target.classList.contains('btn-warning')) {
+        console.log('clicked edit');
+    }
+
+    if (e.target.classList.contains('btn-primary')) {
+        console.log('clicked like');
+    }
+}
+
+
 function createMovieCard(movie) {
+    let userId = sessionStorage.getItem('userId');
+    let buttons = [];
+
+    if (userId !== null) {
+        if (userId === movie._ownerId) {
+            buttons.push('<a class="btn btn-danger" href="#">Delete</a>');
+            buttons.push('<a class="btn btn-warning" href="#">Edit</a>');
+        } else {
+            buttons.push('<a class="btn btn-primary" href="#">Like</a>');
+        }
+    }
+
+    buttons.push('<span class="enrolled-span">Liked 1</span>');
+
     let el = document.createElement('div');
     el.classList.add('container');
+    el.addEventListener('click', btnFunctions);
     el.innerHTML = `   <div class="row bg-light text-dark">
     <h1>Movie title: ${movie.title}</h1>
 
@@ -18,15 +51,13 @@ function createMovieCard(movie) {
     <div class="col-md-4 text-center">
         <h3 class="my-3 ">Movie Description</h3>
         <p>${movie.description}</p>
-        <a class="btn btn-danger" href="#">Delete</a>
-        <a class="btn btn-warning" href="#">Edit</a>
-        <a class="btn btn-primary" href="#">Like</a>
-        <span class="enrolled-span">Liked 1</span>
+        ${buttons.join('')}
     </div>
 </div>`
 
     return el;
 }
+
 
 
 let main = null;

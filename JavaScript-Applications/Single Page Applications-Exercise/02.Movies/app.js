@@ -57,4 +57,24 @@ function setupNavigation() {
         e.preventDefault();
         showCreate();
     });
+
+    document.querySelector('#logout').addEventListener('click', async (e) => {
+        let token = sessionStorage.getItem('authToken');
+        let response = await fetch('http://localhost:3030/users/logout', {
+            method: 'GET',
+            headers: {
+                'X-Authorization': token
+            }
+        });
+
+        if (response.ok) {
+            sessionStorage.removeItem('authToken');
+            sessionStorage.removeItem('userId');
+            sessionStorage.removeItem('email');
+
+            nav.querySelectorAll('.user').forEach(li => li.style.display = 'none');
+            nav.querySelectorAll('.guest').forEach(li => li.style.display = 'block');
+            showHome();
+        }
+    })
 }

@@ -20,14 +20,14 @@ async function userLog(e) {
     });
 
     if (response.ok) {
-        let userData = response.json();
+        let userData = await response.json();
         sessionStorage.setItem('authToken', userData.accessToken);
         sessionStorage.setItem('userId', userData._id);
         sessionStorage.setItem('email', userData.email);
 
         document.querySelector('#welcome').textContent = `Welcome, ${email}`;
         document.querySelector('nav').querySelectorAll('.user').forEach(li => li.style.display = 'block');
-        document.querySelector('nav').querySelectorAll('guest').forEach(li => li.style.display = 'none');
+        document.querySelector('nav').querySelectorAll('.guest').forEach(li => li.style.display = 'none');
 
         showHome();
     }
