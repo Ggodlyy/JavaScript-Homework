@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Books</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
     <button id="loadBooks">LOAD ALL BOOKS</button>
     <table>
@@ -18,30 +20,43 @@
             </tr>
         </thead>
         <tbody>
-     
+            <tr>
+                <td>Harry Potter</td>
+                <td>J. K. Rowling</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Game of Thrones</td>
+                <td>George R. R. Martin</td>
+                <td>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </td>
+            </tr>
         </tbody>
     </table>
 
-    <form id="createForm">
-        <h3>FORM</h3>
+    <form id="add-form">
+        <h3>Add book</h3>
         <label>TITLE</label>
         <input type="text" name="title" placeholder="Title...">
         <label>AUTHOR</label>
         <input type="text" name="author" placeholder="Author...">
-        <button id="submit">Submit</button>
+        <input type="submit" value="Submit">
     </form>
 
-    <form id="editForm">
+    <form id="edit-form">
         <input type="hidden" name="id">
-        <h3>Edit FORM</h3>
+        <h3>Edit book</h3>
         <label>TITLE</label>
-        <input id="titleInput" type="text" name="title" placeholder="Title...">
+        <input type="text" name="title" placeholder="Title...">
         <label>AUTHOR</label>
-        <input id="authorInput" type="text" name="author" placeholder="Author...">
-        <button>Save</button>
+        <input type="text" name="author" placeholder="Author...">
+        <input type="submit" value="Save">
     </form>
-    <script src="./app.js"></script>
 </body>
-</html>
 
-<!--Feel free to change/update/modify the HTML Structure-->
+</html>
